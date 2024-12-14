@@ -3,37 +3,57 @@ Name: Ruby Koehler
 Date: 12/10/24
 Topic: Unit 6 HW 2
 """
-while True:
-    def isinteger(user_string):
-        user_string = user_string.strip()
 
-        pos = 0
-        for char in user_string:
-            pos = pos + 1
-            print(pos)
-            if pos == 1:
-                if char in "-+&":
-                    continue
-                else:
-                    if char not in "0123456789":
-                        print("False")
-                        break
+
+def isInteger(_users_string_):
+    _users_string_ = _users_string_.strip()
+
+    pos = 0
+    for char in _users_string_:
+        pos = pos + 1
+        #       print(pos)
+        if pos == 1:
+            if char in "-+&":
+                next
             else:
                 if char not in "0123456789":
-                    print("False")
-                    break
-        if pos >= 2:
-            print("True")
-                    break
+                    return False
         else:
-            print("False")
-                    break
+            if char not in "0123456789":
+                return False
+    if pos >= 2:
+        return True
+    else:
+        return False
 
-# Test Cases:
-    isinteger("abcde")
-    isinteger("12345")
-    isinteger("&12345")
-    isinteger("+12345")
-    isinteger("-12345")
-    isinteger("     12345     ")
-    isinteger("")
+
+# Test cases
+
+if not isInteger("abcde"):
+    print("correct")
+else:
+    print("incorrect")
+if isInteger("12345"):
+    print("correct")
+else:
+    print("incorrect")
+if isInteger("&12345"):
+    print("correct")
+else:
+    print("incorrect")
+if isInteger("+12345"):
+    print("correct")
+else:
+    print("incorrect")
+if isInteger("-12345"):
+    print("correct")
+else:
+    print("incorrect")
+if isInteger("  12345   "):
+    print("correct")
+else:
+    print("incorrect")
+if not isInteger(""):
+    print("correct")
+else:
+    print("incorrect")
